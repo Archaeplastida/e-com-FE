@@ -66,6 +66,7 @@ const Navbar = () => {
                   Search
                 </Button>
               </Box>
+              <Button color="inherit" component={Link} to="/cart">Cart</Button>
               <Button color="inherit" component={Link} to="/products/create">Create</Button>
               <Typography variant="body1" sx={{ mx: 2 }}>Welcome, {username}</Typography>
               <Button color="inherit" onClick={handleLogout}>Logout</Button>

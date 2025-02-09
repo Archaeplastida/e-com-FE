@@ -29,7 +29,6 @@ import {
     DialogActions,
 } from '@mui/material';
 import { ArrowBackIos, ArrowForwardIos, Edit, Delete, ShoppingCart } from '@mui/icons-material';
-import "./ProductPage.css"
 import { checkUserAuth } from '../utils/checkUserAuth';
 
 const ProductPage = () => {
