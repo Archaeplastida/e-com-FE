@@ -32,7 +32,7 @@ const ProductCreationForm = () => {
     const [formData, setFormData] = useState({
         product_name: "",
         product_description: "",
-        price: "", // Price is now a string
+        price: "",
         tags: [],
         images: [""]
     });
@@ -65,12 +65,12 @@ const ProductCreationForm = () => {
 
     useEffect(() => {
         checkFormValidity();
-    }, [imageErrors, formData, isImageValidating, tagError, priceError]); // Include priceError in dependency
+    }, [imageErrors, formData, isImageValidating, tagError, priceError]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
         if (e.target.name === 'price') {
-            setPriceError(""); // Clear price error on typing
+            setPriceError(""); // Clears price error on typing
         }
     };
 
@@ -180,7 +180,7 @@ const ProductCreationForm = () => {
                 setPriceError(""); // Clear error if valid
             }
         } else {
-            isPriceValid = false; // Price is empty
+            isPriceValid = false;
         }
 
 

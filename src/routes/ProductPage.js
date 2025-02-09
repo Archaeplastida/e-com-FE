@@ -23,12 +23,12 @@ import {
     TextField,
     Button,
     Snackbar,
-    Dialog, // Import Dialog components
+    Dialog,
     DialogTitle,
     DialogContent,
     DialogActions,
 } from '@mui/material';
-import { ArrowBackIos, ArrowForwardIos, Edit, Delete, ShoppingCart } from '@mui/icons-material'; // Import Edit and Delete icons
+import { ArrowBackIos, ArrowForwardIos, Edit, Delete, ShoppingCart } from '@mui/icons-material';
 import "./ProductPage.css"
 import { checkUserAuth } from '../utils/checkUserAuth';
 
@@ -121,7 +121,7 @@ const ProductPage = () => {
 
     useEffect(() => {
         if (product) {
-            setIsCreator(localStorage.getItem("username") === product.user_name); // Calculate isCreator after product is loaded
+            setIsCreator(localStorage.getItem("username") === product.user_name); // Detect if isCreator after product is loaded
         }
     }, [product]);
 
@@ -145,7 +145,7 @@ const ProductPage = () => {
         rate(token, product_id, userRating, reviewText)
             .then(data => {
                 setSnackbarOpen(true);
-                window.location.reload(); // Consider a better way to refresh ratings
+                window.location.reload(); // I may consider a better way to refresh ratings, it may be worked on.
             }).catch(error => {
                 console.error("Error submitting rating:", error);
                 setErrorInfoRate(error);
@@ -242,8 +242,6 @@ const ProductPage = () => {
         );
     }
 
-    //const isCreator = localStorage.getItem("username") === product.user_name;
-
     return (
         <Container maxWidth="md" sx={{ mt: 4 }}>
             <Card>
@@ -327,29 +325,29 @@ const ProductPage = () => {
                             <Box mt={2} display="flex" gap={2}>
                                 {!loadCart ? (
                                     <>
-                                     {addedToCart ? ( // Check if the user already has the item in the cart
-                                        <Button
-                                            variant="contained"
-                                            startIcon={<ShoppingCart />}
-                                            onClick={handleAddToCart}
-                                        >
-                                            Unadd from Cart
-                                        </Button>
-                                    ) : (
-                                        <Button
-                                            variant="outlined"
-                                            startIcon={<ShoppingCart />}
-                                            onClick={handleAddToCart}
-                                        >
-                                            Add to Cart
-                                        </Button>
-    
-                                    )}
+                                        {addedToCart ? ( // Check if the user already has the item in the cart
+                                            <Button
+                                                variant="contained"
+                                                startIcon={<ShoppingCart />}
+                                                onClick={handleAddToCart}
+                                            >
+                                                Unadd from Cart
+                                            </Button>
+                                        ) : (
+                                            <Button
+                                                variant="outlined"
+                                                startIcon={<ShoppingCart />}
+                                                onClick={handleAddToCart}
+                                            >
+                                                Add to Cart
+                                            </Button>
+
+                                        )}
                                     </>
-                                ):(
+                                ) : (
                                     <p>Loading...</p>
                                 )
-                            }
+                                }
                                 {isCreator && ( // Conditionally render Edit and Delete buttons for creator
                                     <>
                                         <Button

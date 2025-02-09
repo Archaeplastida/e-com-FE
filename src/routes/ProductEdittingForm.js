@@ -34,8 +34,8 @@ const ProductEdittingForm = () => {
     const [allTags, setAllTags] = useState([]);
     const [checkedTags, setCheckedTags] = useState([]);
     const [isFormValid, setIsFormValid] = useState(false);
-    const [snackbarOpen, setSnackbarOpen] = useState(false); // Snackbar state
-    const [snackbarMessage, setSnackbarMessage] = useState(''); // Snackbar message state
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
 
     useEffect(() => {
         if (token) {
@@ -87,7 +87,7 @@ const ProductEdittingForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!isFormValid) {
-            setSnackbarOpen(true); // Snackbar will already be showing message from validateForm
+            setSnackbarOpen(true);
             return;
         }
         const submissionData = {
@@ -156,8 +156,8 @@ const ProductEdittingForm = () => {
         if (!isValid) {
             setSnackbarMessage(messages.join(' ')); // Join messages for Snackbar
         } else {
-            setSnackbarMessage(''); // Clear message if valid
-            setSnackbarOpen(false); // Ensure Snackbar is closed if form becomes valid after being invalid
+            setSnackbarMessage('');
+            setSnackbarOpen(false);
         }
     };
 

@@ -7,14 +7,14 @@ import getAverageRating from '../utils/getAvgRating';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActionArea from '@mui/material/CardActionArea';
-import CardMedia from '@mui/material/CardMedia'; // Import CardMedia
+import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 
-const ProductCard = ({ id, product_name, price, seller_name, token, image }) => { // Add image prop
+const ProductCard = ({ id, product_name, price, seller_name, token, image }) => {
 
     const [avgRating, setAvgRating] = useState(false);
     const [loadRating, setLoadRating] = useState(true);
@@ -55,12 +55,12 @@ const ProductCard = ({ id, product_name, price, seller_name, token, image }) => 
                     <CardMedia
                         style={{padding: "5px"}}
                         component="img"
-                        height="140" // Adjust height as needed
-                        image={image} // Use the image prop as the image source
-                        alt={product_name} // Good practice to have alt text
+                        height="140"
+                        image={image}
+                        alt={product_name}
                     />
                 )}
-                <CardContent sx={{ flexGrow: 1 }}> {/* Let CardContent take remaining vertical space */}
+                <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="div">
                         {product_name}
                     </Typography>
