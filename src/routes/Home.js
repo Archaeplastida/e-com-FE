@@ -17,7 +17,7 @@ const Home = () => {
     <Container maxWidth="md" className="home-container">
       <Box className="home-content">
         <Typography variant="h3" component="h1" className="home-title">
-          Welcome to E-com
+          Welcome to Nile
         </Typography>
 
         {token ? (

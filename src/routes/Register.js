@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register as apiRegister } from '../apis/auth';
 import './Form.css';
@@ -17,6 +17,10 @@ const Register = () => {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if(localStorage.getItem("token") && localStorage.getItem("username")) navigate("/");
+  }, [])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthContext';
 import { login as apiLogin } from '../apis/auth';
@@ -16,6 +16,10 @@ const Login = () => {
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
+
+  useEffect(() => {
+    if(localStorage.getItem("token") && localStorage.getItem("username")) navigate("/");
+  }, [])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

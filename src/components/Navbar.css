@@ -1,47 +1,12 @@
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--navbar-bg-color);
-  color: var(--navbar-text-color);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-nav a {
-  color: var(--navbar-text-color);
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 500;
-  transition: color var(--transition-speed) ease;
-}
-
-nav a:hover {
-  text-decoration: underline;
-  color: var(--primary-color);
-}
-
-nav button {
-  background-color: var(--danger-color);
-  color: var(--navbar-text-color);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  border-radius: var(--border-radius);
-  transition: background-color var(--transition-speed) ease, transform 0.1s ease;
-}
-
-nav button:hover {
-  background-color: var(--danger-hover-color);
-  transform: translateY(-1px);
-}
-
-nav button:active {
-  transform: translateY(0);
-}
-
-.username {
-  margin-right: 1rem;
+.navbar-brand {
   font-weight: bold;
-  color: var(--navbar-text-color);
+}
+
+
+.link-secondary:hover {
+  background-color: var(--tag-hover-bg-color) !important;
+  text-decoration: none;
+  color: var(--navbar-secondary-text-color) !important;
+  opacity: 0.9;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, opacity var(--transition-speed) ease !important;
 }

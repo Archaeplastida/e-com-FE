@@ -31,3 +31,16 @@ export const logout = async (token) => {
     throw new Error(error.response?.data?.message || 'Logout failed');
   }
 };
+
+export const verify = async (token) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/verify`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Unauthorized');
+  }
+}
